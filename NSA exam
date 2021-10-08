@@ -1,0 +1,222 @@
+exam@debian:~$ mkdir sales
+exam@debian:~$ cd sales
+exam@debian:~/sales$ mkdir location1
+exam@debian:~/sales$ mkdir location2
+exam@debian:~/sales$ mkdir location3
+exam@debian:~/sales$ ls
+location1  location2  location3
+exam@debian:~/sales$ cd location1
+exam@debian:~/sales/location1$ touch sales1
+exam@debian:~/sales/location1$ touch sales2
+exam@debian:~/sales/location1$ touch sales3
+exam@debian:~/sales/location1$ ls
+sales1  sales2  sales3
+exam@debian:~/sales/location1$ cat >sales1
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+exam@debian:~/sales/location1$ cat >sales2
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+exam@debian:~/sales/location1$ cat >sales3
+w
+x
+y
+z
+exam@debian:~/sales/location1$ cd ..
+exam@debian:~/sales$ cd location2
+exam@debian:~/sales/location2$ touch pur1
+exam@debian:~/sales/location2$ touch pur2
+exam@debian:~/sales/location2$ cat > pur1
+hai
+hello
+exam@debian:~/sales/location2$ cat > pur2
+welcome
+kerala
+exam@debian:~/sales/location2$ cd ..
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ touch stock1
+exam@debian:~/sales/location3$ touch stock2
+exam@debian:~/sales/location3$ cat > stock1
+Happy
+day
+girl
+how
+are
+you?
+Nice
+to
+meet
+your
+family
+dear
+exam@debian:~/sales/location3$ cd ..
+exam@debian:~/sales$ 
+
+Q1.
+
+exam@debian:~/sales$ cd location2
+exam@debian:~/sales/location2$ cat pur1 pur2 >> pur3
+exam@debian:~/sales/location2$ ls
+pur1  pur2  pur3
+exam@debian:~/sales/location2$ cat pur3
+hai
+hello
+welcome
+kerala
+exam@debian:~/sales/location2$ 
+
+Q2.
+
+exam@debian:~/sales$ cp location2/pur3 location3/stock3
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ ls
+stock1  stock2  stock3
+exam@debian:~/sales/location3$ cat stock3
+hai
+hello
+welcome
+kerala
+exam@debian:~/sales/location3$ 
+
+Q3.
+
+exam@debian:~/sales/location3$ chmod a+rwx stock3
+exam@debian:~/sales/location3$ ls -l
+total 8
+-rw-r--r-- 1 exam exam 58 Oct  8 14:01 stock1
+-rw-r--r-- 1 exam exam  0 Oct  8 14:00 stock2
+-rwxrwxrwx 1 exam exam 25 Oct  8 14:06 stock3
+exam@debian:~/sales/location3$ 
+
+Q4.
+
+exam@debian:~/sales/location3$ head stock1
+Happy
+day
+girl
+how
+are
+you?
+Nice
+to
+meet
+your
+
+
+Q5.
+
+exam@debian:~/sales$ ls -l
+total 12
+drwxr-xr-x 2 exam exam 4096 Oct  8 13:56 location1
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:02 location2
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:05 location3
+exam@debian:~/sales$ 
+
+
+2.
+
+echo "Calculate volume"
+echo "................"
+echo -e "Options \n 1. Sphere \n 2. Cube \n 3. Cylinder"
+read ch
+pi=$((314 / 100 ))
+
+case $ch in
+1)echo "Enter radius of sphere :"
+  read r
+  v=$(( pi * r * r * r * 4))
+  v=$(( v /3 ))
+  echo "Volume = $v"
+  ;;
+2)echo "Enter side of cube :"
+  read a
+  v=$(( a * a * a * 4 ))
+  echo "Volume = $v"
+  ;;
+3)echo "Enter radius and height of cylinder :"
+  read r
+  read h
+  b=4/3
+  v=$(( h * r * r * pi))
+  echo "Volume = $v"
+  ;;   
+*)echo "Invalid choice"
+
+esac
+
+OUTPUT
+
+
+exam@debian:~$ ./pgm.sh
+Calculate volume
+................
+Options 
+ 1. Sphere 
+ 2. Cube 
+ 3. Cylinder
+1
+Enter radius of sphere :
+5
+Volume = 523
+exam@debian:~$ ./pgm.sh
+Calculate volume
+................
+Options 
+ 1. Sphere 
+ 2. Cube 
+ 3. Cylinder
+2
+Enter side of cube :
+10
+Volume = 4000
+exam@debian:~$ ./pgm.sh
+Calculate volume
+................
+Options 
+ 1. Sphere 
+ 2. Cube 
+ 3. Cylinder
+3
+Enter radius and height of cylinder :
+10
+10
+Volume = 3142
+exam@debian:~$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
